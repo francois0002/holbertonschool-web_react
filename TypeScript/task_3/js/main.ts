@@ -1,14 +1,11 @@
-interface Teacher {
-    firstName: string;
-    lastName: string;
-    fullTimeEmployee: boolean;
-    yearsOfExperience? : number;
-    location: string;
 
-    [key: string]: any;      // Allows any additional properties with any type
+interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
 }
 
-interface Directors extends Teacher {
-    numberOfReports: number;
+
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+    const firstLetterName: string = firstName [0];
+    return firstLetterName + ". " + lastName;
 }
 
